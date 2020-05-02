@@ -1,4 +1,4 @@
-# pwa-eu
+# PWA-EU
 
 ## Project setup
 ```

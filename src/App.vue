@@ -22,8 +22,18 @@ export default {
 
   body {
     background-color: white;
+    font-size: 16px;
     margin: 0;
+    min-height: 100vh;
     padding: 0;
+  }
+
+  #pwa-eu {
+    min-height: 100vh;
+  }
+
+  p {
+    font-size: 1rem;
   }
 </style>
 

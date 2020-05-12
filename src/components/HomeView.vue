@@ -1,22 +1,20 @@
 <template>
-  <section>
+  <section class="pwa-eu-container">
     <header>
       <md-toolbar class="md-primary">
         <router-link to="/"><h1 class="md-title">Calendar</h1></router-link>
       </md-toolbar>
     </header>
 
-    <main class="app__main">
+    <main class="main">
       <router-view></router-view>
     </main>
 
     <footer class="footer">
-      <md-menu to="/"  md-direction="bottom-start">
-        <md-button md-menu-trigger v-on:click="activeLink = 0" v-bind:class="{ active: activeLink == 0 }"><md-icon>home</md-icon>
-          Home</md-button>
-        <md-button to="/mydesign" md-menu-trigger v-on:click="activeLink = 1" v-bind:class="{ active:  activeLink == 1 }"><md-icon>face</md-icon>
-          My Design</md-button>
-      </md-menu>
+      <md-bottom-bar md-sync-route="true" md-type="fixed">
+        <md-bottom-bar-item id="home" exact to="/" md-label="Home" md-icon="home"></md-bottom-bar-item>
+        <md-bottom-bar-item id="mydesign" exact to="/mydesign" md-icon="face" md-label="My Design"></md-bottom-bar-item>
+      </md-bottom-bar>
     </footer>
   </section>
 </template>
@@ -28,12 +26,27 @@ export default {
       return {
         activeLink: 0
       }
-    },
-    mounted() {
-      if (this.$route.name === 'events')
-        this.activeLink = 0;
-      else
-        this.activeLink = 1;
     }
 }
 </script>
+
+<style lang="scss">
+  .pwa-eu-container {
+    min-height: 100vh;
+  }
+
+  .main {
+    padding: 0 0.75rem;
+  }
+
+  .footer {
+    border-top: 1px solid #eee;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  .footer .md-bottom-bar>.md-ripple {
+    justify-content: space-evenly;
+  }
+</style>

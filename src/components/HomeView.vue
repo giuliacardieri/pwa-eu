@@ -6,8 +6,48 @@
       </md-toolbar>
     </header>
 
-    <main class="main">
+    <main class="main md-layout md-gutter">
+      <p class="md-layout-item md-size-100 p--small">Today</p>
       <router-view></router-view>
+      <md-button v-on:click="showForm()" class="button-add md-icon-button md-accent md-raised">
+        <md-icon>add</md-icon>
+      </md-button>
+      <section class="form" v-if="form">
+        <form novalidate class="md-layout">
+          <md-card class="md-layout-item md-size-50 md-small-size-100">
+            <md-card-header>
+              <div class="md-title">Add new event</div>
+            </md-card-header>
+
+            <md-card-content>
+              <div class="md-layout md-gutter">
+                <div class="md-layout-item md-small-size-100">
+                  <md-field>
+                    <label for="title">Event Title*</label>
+                    <md-input name="title" id="title" />
+                    <span class="md-error">The title is required</span>
+                    <span class="md-error">Invalid event title</span>
+                  </md-field>
+                </div>
+              </div>
+              <div class="md-layout md-gutter">
+                <div class="md-layout-item md-small-size-100">    
+                  <md-datepicker>
+                    <label>Event Date*</label>
+                  </md-datepicker>
+                </div>
+              </div>
+            </md-card-content>
+
+
+            <md-card-actions>
+              <md-button type="submit" class="md-primary">Create event</md-button>
+            </md-card-actions>
+          </md-card>
+
+          <md-snackbar :md-active.sync="userSaved">The event was created with success!</md-snackbar>
+        </form>
+      </section>
     </main>
 
     <footer class="footer">
@@ -24,7 +64,13 @@ export default {
     name: 'HomeView',
     data() {
       return {
-        activeLink: 0
+        form: false
+      }
+    },
+    methods: {
+      showForm: function() {
+        console.log('formouuu')
+        this.form = true
       }
     }
 }
@@ -36,7 +82,20 @@ export default {
   }
 
   .main {
-    padding: 0 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .button-add {
+    bottom: calc(1rem + 56px);
+    position: absolute;
+    right: 1rem;
+  }
+
+  .form {
+    height: 100%;
+    position: absolute;
+    width: 100%;
   }
 
   .footer {

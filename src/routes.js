@@ -1,9 +1,7 @@
 import HomeView from '@/components/HomeView'
 import EventsView from '@/components/EventsView'
 import MyDesignView from '@/components/MyDesignView'
-import InterfaceElementsView from '@/components/InterfaceElementsView'
-import ModalitiesView from '@/components/ModalitiesView'
-import DisplayFormatView from '@/components/DisplayFormatView'
+import PreferencesView from '@/components/PreferencesView'
 import AddFormView from '@/components/AddFormView'
 
 const routes = [
@@ -21,16 +19,9 @@ const routes = [
           component: MyDesignView
         },    
         {
-          path: 'mydesign/interfaceelements',
-          component: InterfaceElementsView
-        },
-        {
-          path: 'mydesign/modalities',
-          component: ModalitiesView
-        },
-        {
-          path: 'mydesign/displayformat',
-          component: DisplayFormatView
+          path: 'mydesign/:id/:type?',
+          component: PreferencesView,
+          props: { default: true }
         }
     ]},
     {

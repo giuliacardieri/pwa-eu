@@ -6,8 +6,7 @@
       </md-toolbar>
     </header>
 
-    <main class="main md-layout md-gutter">
-      <p class="md-layout-item md-size-100 p--small">Today</p>
+    <main class="main md-layout">
       <router-view></router-view>
       <md-button v-on:click="showForm()" class="button-add md-icon-button md-accent md-raised">
         <md-icon>add</md-icon>

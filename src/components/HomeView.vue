@@ -52,7 +52,7 @@
     <footer class="footer">
       <md-bottom-bar md-sync-route="true" md-type="fixed">
         <md-bottom-bar-item id="home" exact to="/" md-label="Home" md-icon="home"></md-bottom-bar-item>
-        <md-bottom-bar-item id="mydesign" exact to="/mydesign" md-icon="face" md-label="My Design"></md-bottom-bar-item>
+        <md-bottom-bar-item id="mydesign" to="/mydesign" md-icon="face" md-label="My Design"></md-bottom-bar-item>
       </md-bottom-bar>
     </footer>
   </section>

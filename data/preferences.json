@@ -2,7 +2,19 @@
 	"preferences": [
 		{
 			"id": "interface-elements",
-			"label": "Interface Elements",
+			"label": "User Interface Elements",
+			"description": "UI elements are checkboxes, datepicker, text input, select and timepicker.",
+			"icons": [
+				{
+					"name": "event"
+				},
+				{
+					"name": "check_box"
+				},
+				{
+					"name": "access_time"
+				}
+			],
 			"types": [
 				{
 					"id": "checkbox",
@@ -97,96 +109,116 @@
 			]
 		},
 		{
-			"id": "modalities",
-			"label": "Modalities",
+			"id": "interaction-methods",
+			"label": "Interaction Methods",
+			"description": "Interaction methods such as swipe movement, voice recognition and voice synthesis may be activated or deactivated.",
+			"icons": [
+				{
+					"name": "mic"
+				},
+				{
+					"name": "touch_app"
+				},
+				{
+					"name": "volume_up"
+				}
+			],
 			"types": [
 				{
-					"id": "checkbox",
-					"label": "Checkbox",
+					"id": "swipe",
+					"label": "Swipe Movement",
 					"options": [
 						{
-							"id": "checkbox-1",
-							"label": "Material Checkbox",
-							"is-material": "true",
-							"type": "checkbox"
+							"id": "swipe-on",
+							"label": "Swipe movement is activated",
+							"type": "swipe"
 						},
 						{
-							"id": "checkbox-2",
-							"label": "Default Checkbox",
-							"is-material": "false",
-							"type": "checkbox"
+							"id": "swipe-off",
+							"label": "Swipe movement is deactivated",
+							"type": "swipe"
 						}
 					]
 				},
 				{
-					"id": "datepicker",
-					"label": "Datepicker",
+					"id": "voice-recognition",
+					"label": "Voice Recognition",
 					"options": [
 						{
-							"id": "datepicker-1",
-							"label": "Material Datepicker",
-							"is-material": "true",
-							"type": "datepicker"
+							"id": "voice-recognition-on",
+							"label": "Voice Recognition is activated",
+							"type": "voice-recognition"
 						},
 						{
-							"id": "datepicker-2",
-							"label": "Material Datepicker",
-							"is-material": "true",
-							"type": "datepicker"
+							"id": "voice-recognition-off",
+							"label": "Voice Recognition is deactivated",
+							"type": "voice-recognition"
 						}
 					]
 				},
 				{
-					"id": "input",
-					"label": "Text Input",
+					"id": "voice-synthesis",
+					"label": "Voice Synthesis",
 					"options": [
 						{
-							"id": "input-1",
-							"label": "Material Input",
-							"is-material": "true",
-							"type": "input"
+							"id": "voice-synthesis-on",
+							"label": "Voice Synthesis is activated",
+							"type": "voice-synthesis"
 						},
 						{
-							"id": "input-2",
-							"label": "Default Input",
-							"is-material": "true",
-							"type": "input"
+							"id": "voice-synthesis-off",
+							"label": "Voice Synthesis is deactivated",
+							"type": "voice-synthesis"
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "content-display-format",
+			"label": "Content Display Format",
+			"description": "The content display format of images and events may be changed.",
+			"icons": [
+				{
+					"name": "image"
+				},
+				{
+					"name": "view_module"
+				},
+				{
+					"name": "list"
+				}
+			],
+			"types": [
+				{
+					"id": "card-images",
+					"label": "Card Images",
+					"options": [
+						{
+							"id": "cards-images-on",
+							"label": "Cards have images",
+							"type": "card-images"
+						},
+						{
+							"id": "cards-images-off",
+							"label": "Cards have no images",
+							"type": "card-images"
 						}
 					]
 				},
 				{
-					"id": "select",
-					"label": "Select",
+					"id": "card-or-list",
+					"label": "Events display format",
 					"options": [
 						{
-							"id": "select-1",
-							"label": "Material Select",
-							"is-material": "true",
-							"type": "select"
+							"id": "cards",
+							"label": "Events are displayed as cards",
+							"type": "events"
 						},
 						{
-							"id": "select-2",
-							"label": "Default Select",
-							"is-material": "true",
-							"type": "select"
-						}
-					]
-				},
-				{
-					"id": "radio",
-					"label": "Radio Buttons",
-					"options": [
-						{
-							"id": "radio-1",
-							"label": "Material Radio Buttons",
-							"is-material": "true",
-							"type": "radio"
-						},
-						{
-							"id": "radio-2",
-							"label": "Default Radio Buttons",
-							"is-material": "true",
-							"type": "radio"
+							"id": "lists",
+							"label": "Events are displayed as a list",
+							"type": "events"
 						}
 					]
 				}

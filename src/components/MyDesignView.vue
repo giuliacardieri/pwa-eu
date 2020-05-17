@@ -1,47 +1,17 @@
 <template>
   <section class="md-layout-item md-size-100">
-    <p>On this section you may choose the appearance and behavior of the UI elements, interaction methods and content formats from this app.</p>
+    <p>On this section you may choose the appearance and behavior of different set of preferences from this app. Please browse through the sections below to check the preferences availability.</p>
     <div class="list">
-      <md-list :md-expand-single="expandSingle">
-        <md-list-item md-expand :md-expanded.sync="expandNews">
-          <span class="md-list-item-text">UI Elements</span>
+      <md-list :md-expand-single="true">
+        <md-list-item md-expand v-for="types in allPreferences" :key="types.id">
+          <span class="md-list-item-text">{{ types.label }}</span>
 
           <div class="list-content-wrapper" slot="md-expand">
             <div class="list-icons-wrapper">
-              <md-icon class="md-size-2x">event</md-icon>
-              <md-icon class="md-size-2x">check_box</md-icon>
-              <md-icon class="md-size-2x">access_time</md-icon>
+              <md-icon v-for="icon in types.icons" :key="icon.name" class="md-size-2x">{{ icon.name }}</md-icon>
             </div>
-            <p>UI elements are checkboxes, datepicker, text input, select and timepicker.</p>
-            <md-button to="/mydesign/interfaceelements" data-type="0" class="md-accent md-raised">Change UI elements</md-button>
-          </div>
-        </md-list-item>
-
-        <md-list-item md-expand :md-expanded.sync="expandNews">
-          <span class="md-list-item-text">Interaction Methods</span>
-
-          <div class="list-content-wrapper" slot="md-expand">
-            <div class="list-icons-wrapper">
-              <md-icon class="md-size-2x">mic</md-icon>
-              <md-icon class="md-size-2x">touch_app</md-icon>
-              <md-icon class="md-size-2x">volume_up</md-icon>
-            </div>
-            <p>Interaction methods such as swipe movement, voice recognition and voice synthesis may be activated or deactivated.</p>
-            <md-button to="/mydesign/modalities" data-type="1" class="md-accent md-raised">Change interaction methods</md-button>
-          </div>
-        </md-list-item>
-
-        <md-list-item md-expand :md-expanded.sync="expandNews">
-          <span class="md-list-item-text">Content display format</span>
-
-          <div class="list-content-wrapper" slot="md-expand">
-            <div class="list-icons-wrapper">
-              <md-icon class="md-size-2x">image</md-icon>
-              <md-icon class="md-size-2x">view_module</md-icon>
-              <md-icon class="md-size-2x">list</md-icon>
-            </div>
-            <p>The content display format of images and events may be changed.</p>
-            <md-button to="/mydesign/displayformat" data-type="2" class="md-accent md-raised">Change content display format</md-button>
+            <p>{{ types.description }}</p>
+            <md-button :to="'/mydesign/' + types.id + '/' + types.types[0].id" class="md-accent md-raised">Change {{ types.label }}</md-button>
           </div>
         </md-list-item>
        </md-list>
@@ -50,8 +20,15 @@
 </template>
 
 <script>
+import { preferences } from '../../data/preferences.json'
 export default {
-  name: 'MyDesignView'
+  name: 'MyDesignView',
+  data() {
+    return {
+      allPreferences: preferences,
+      preferencesData: undefined,
+    }
+  }
 }
 </script>
 

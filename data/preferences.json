@@ -23,14 +23,16 @@
 						{
 							"id": "checkbox-1",
 							"label": "Material Checkbox",
-							"is-material": "true",
-							"type": "checkbox"
+							"isMaterial": true,
+							"type": "checkbox",
+							"active": true
 						},
 						{
 							"id": "checkbox-2",
 							"label": "Default Checkbox",
-							"is-material": "false",
-							"type": "checkbox"
+							"isMaterial": false,
+							"type": "checkbox",
+							"active": false
 						}
 					]
 				},
@@ -41,14 +43,16 @@
 						{
 							"id": "datepicker-1",
 							"label": "Material Datepicker",
-							"is-material": "true",
-							"type": "datepicker"
+							"isMaterial": true,
+							"type": "datepicker",
+							"active": true
 						},
 						{
 							"id": "datepicker-2",
-							"label": "Material Datepicker",
-							"is-material": "true",
-							"type": "datepicker"
+							"label": "Default Datepicker",
+							"isMaterial": false,
+							"type": "datepicker",
+							"active": false
 						}
 					]
 				},
@@ -59,14 +63,16 @@
 						{
 							"id": "input-1",
 							"label": "Material Input",
-							"is-material": "true",
-							"type": "input"
+							"isMaterial": true,
+							"type": "input",
+							"active": true
 						},
 						{
 							"id": "input-2",
 							"label": "Default Input",
-							"is-material": "true",
-							"type": "input"
+							"isMaterial": false,
+							"type": "input",
+							"active": false
 						}
 					]
 				},
@@ -77,14 +83,16 @@
 						{
 							"id": "select-1",
 							"label": "Material Select",
-							"is-material": "true",
-							"type": "select"
+							"isMaterial": true,
+							"type": "select",
+							"active": true
 						},
 						{
 							"id": "select-2",
 							"label": "Default Select",
-							"is-material": "true",
-							"type": "select"
+							"isMaterial": false,
+							"type": "select",
+							"active": false
 						}
 					]
 				},
@@ -95,14 +103,16 @@
 						{
 							"id": "radio-1",
 							"label": "Material Radio Buttons",
-							"is-material": "true",
-							"type": "radio"
+							"isMaterial": true,
+							"type": "radio",
+							"active": true
 						},
 						{
 							"id": "radio-2",
 							"label": "Default Radio Buttons",
-							"is-material": "true",
-							"type": "radio"
+							"isMaterial": false,
+							"type": "radio",
+							"active": false
 						}
 					]
 				}
